@@ -1,3 +1,6 @@
+JSON Schema validation in Spring Boot
+=============
+
 ## Reference: 
 
 Example Spring project for [Integrating JSON Schema validation in Spring using a custom HandlerMethodArgumentResolver][1].
