@@ -1,0 +1,53 @@
+{
+	"$schema": "http://json-schema.org/draft/2020-12/schema",
+	"title": "Order Event",
+	"description": "Order event schema for example",
+	"required": [
+		"order_id",
+		"total-price",
+		"products"
+	],
+	"properties": {
+		"order_id": {
+			"type": "string"
+		},
+		"event": {
+			"enum": [
+				"PLACED",
+				"DELIVERED",
+				"RETURNED"
+			],
+			"type": "string"
+		},
+		"total-price": {
+			"type": "number",
+			"minimum": 0
+		},
+		"products": {
+			"type": "array",
+			"items": {
+				"additionalProperties": true,
+				"required": [
+					"product_id",
+					"price"
+				],
+				"minItems": 1,
+				"properties": {
+					"product_id": {
+						"type": "string",
+						"maxUtf8ByteLength":10,
+						"minUtf8ByteLength":2
+					},
+					"price": {
+						"type": "number",
+						"minimum": 0
+					},
+					"quantity": {
+						"type": "integer",
+						"equals": "2"
+					}
+				}
+			}
+		}
+	}
+}

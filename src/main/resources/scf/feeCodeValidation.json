@@ -1,0 +1,60 @@
+{
+	"rules": {
+		"feeType": {
+			"ruleInfos": [
+				{
+					"ruleName": "Required",
+					"errorArgs": ["label.feeCode.feeType"],
+					"errorMsg": "validation.required"
+				}
+			]
+		},
+		"feeCodeName": {
+			"ruleInfos": [
+				{
+					"ruleName": "Required",
+					"errorArgs": ["label.feeCode.feeCodeName"],
+					"errorMsg": "validation.required"
+				},
+                {
+                    "max": "13",
+                    "ruleName": "MaxLength",
+                    "errorArgs": [
+                        "label.feeCode.feeCodeName",
+                        "13"
+                    ],
+                    "errorMsg": "validation.maxlength"
+                },
+                {
+	                "pattern": "^[A-Z;0-9_-]+$",
+	                "ruleName": "PatternCheck",
+	                "errorArgs": [
+	                    "label.feeCode.feeCodeName",
+	                    "[A-Z;0-9;_;-]"
+	                ],
+	                "errorMsg": "validation.patterncheck"
+	            }
+			]
+		},
+		"feeAmt": {
+			"ruleInfos": [
+				{
+				    "ruleName" : "maxvalue",
+				    "errorMsg": "validation.rangevalue",
+				    "errorArgs": [ "label.feeCode.feeAmt", 10000000000000 ],
+				    "max": 10000000000000,
+				    "allowEqual": true
+				},
+                {
+	                "pattern": "^[0-9]+([.]{1}[0-9]+){0,1}$",
+	                "ruleName": "PatternCheck",
+	                "errorArgs": [
+	                    "label.feeCode.feeAmt",
+	                    "^[0-9]+([.]{1}[0-9]+){0,1}$"
+	                ],
+	                "errorMsg": "validation.patterncheck"
+	            }
+			]
+		}
+	}
+}

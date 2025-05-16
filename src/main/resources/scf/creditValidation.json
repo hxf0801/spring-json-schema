@@ -1,0 +1,54 @@
+{
+	"rules": {
+		"creditItemList": {
+			"noteType": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invnotes.notetype"],
+					"errorMsg": "validation.required"
+				}]
+			},
+			"sellerCode": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invoice.sellercode"],
+					"errorMsg": "validation.required"
+				}]
+			},
+			"buyerCode": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invoice.buyercode"],
+					"errorMsg": "validation.required"
+				}]
+			},
+			"invoiceNo": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invnotes.invoiceno"],
+					"errorMsg": "validation.required"
+				}]
+			},
+			"creditAmt": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invnotes.amt"],
+					"errorMsg": "validation.required"
+				},{
+					"ruleName": "BigDecimalRange",
+					"errorArgs": ["label.invnotes.amt", "20", "3"],
+					"errorMsg": "validation.bigdecimalrange",
+					"maxPrecision": "20",
+					"scale": "3"
+				}]
+			},
+			"creditDate": {
+				"ruleInfos": [{
+					"ruleName": "Required",
+					"errorArgs": ["label.invnotes.notedate"],
+					"errorMsg": "validation.required"
+				}]
+			}
+		}
+	}
+}

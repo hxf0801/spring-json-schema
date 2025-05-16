@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"required": [
+		"batch",
+		"items"
+	],
+	"properties": {
+		"batch": {
+			"type": "object",
+			"properties": {
+				"batchRef": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"batchRef"
+			]
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"feeType": {
+						"type": "string"
+					},
+					"feeCodeName": {
+						"type": "string",
+						"maxLength": 13,
+						"pattern": "^[A-Z;0-9_\\-]+$",
+						"message": {
+							"format": "validation.patterncheck"
+						}
+					},
+					"feeAmt": {
+						"type": "number",
+						"maximum": 200,
+						"pattern": "^[0-9]+([.]{1}[0-9]+){0,1}$",
+						"message": {
+							"format": "validation.patterncheck"
+						}
+					}
+				},
+				"required": [
+					"feeType",
+					"feeCodeName"
+				],
+				"message": {
+					"type": "an object",
+					"required": {
+						"feeType": "{0}:''feeType'' validation.required",
+						"feeCodeName": "{0}:''feeCodeName'' validation.required"
+					}
+				}
+			}
+		}
+	}
+}

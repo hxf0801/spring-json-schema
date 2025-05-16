@@ -1,0 +1,50 @@
+{
+	"rules": {
+        "assetId": {
+            "ruleInfos": [
+                {
+                    "max": "10",
+                    "ruleName": "MaxLength",
+                    "allowEqual": false,
+                    "errorArgs": [
+                        "label.apAsset.assetId",
+                        "10"
+                    ],
+                    "errorMsg": "validation.maxlength"
+                }
+            ]
+        },
+        "assetRef": {
+            "ruleInfos": [
+                {
+                    "max": "40",
+                    "ruleName": "MaxLength",
+                    "allowEqual": false,
+                    "errorArgs": [
+                        "label.apAsset.assetRef",
+                        "40"
+                    ],
+                    "errorMsg": "validation.maxlength"
+                }
+            ]
+        },
+        "assetAmtRange": {
+			"ruleInfos": [{
+				"ruleName": "BigDecimalRange",
+				"errorArgs": ["label.apAsset.assetAmtRange", "20", "3"],
+				"errorMsg": "validation.bigdecimalrange",
+				"maxPrecision": "20",
+				"scale": "3"
+			}]
+		},
+		"assetOutsAmtRange": {
+			"ruleInfos": [{
+				"ruleName": "BigDecimalRange",
+				"errorArgs": ["label.apAsset.assetOutsAmtRange", "20", "3"],
+				"errorMsg": "validation.bigdecimalrange",
+				"maxPrecision": "20",
+				"scale": "3"
+			}]
+		}
+     }
+}
