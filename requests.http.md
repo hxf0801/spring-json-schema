@@ -1,4 +1,13 @@
-## Postman 
+## Reference: 
+
+Example Spring project for [Integrating JSON Schema validation in Spring using a custom HandlerMethodArgumentResolver][1].
+
+[1]: https://www.mscharhag.com/spring/json-schema-validation-handlermethodargumentresolver
+
+
+
+
+## Postman for test samples in this project
 
 1.Correct request for  _"/paintings"_
 
